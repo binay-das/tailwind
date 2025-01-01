@@ -8,7 +8,7 @@ const Screen1 = () => {
     }
 
     return <div className="bg-blue-500 min-h-screen flex flex-col items-center text-center">
-    <h1 className="text-webinar mt-32 text-6xl font-semibold">
+    <h1 className="text-webinar text-blue-900 mt-32 text-6xl font-semibold">
       Webinar
       <span>.gg</span>
     </h1>
