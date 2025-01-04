@@ -11,3 +11,7 @@ export const calculateAge = (dob) => {
 
     return age;
 }
+
+export const checkAdult = (age) => {
+    return age >= 18;
+}
