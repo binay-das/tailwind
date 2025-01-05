@@ -15,3 +15,8 @@ export const calculateAge = (dob) => {
 export const checkAdult = (age) => {
     return age >= 18;
 }
+
+export const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
