@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Input } from "../components/Input";
+import { Button } from "../components/Button";
+import { calculateAge, checkAdult } from "../utils";
 
 const Screen1 = () => {
   const [dob, setDob] = useState("");
@@ -7,10 +10,24 @@ const Screen1 = () => {
 
   const handleDobChange = (e) => {
     setDob(e.target.value);
-    
+
     if (dob >= 18) {
       navigate("/email");
     }
+  };
+
+  const onClick = () => {
+    const age = calculateAge(dob);
+
+    const isAdult = checkAdult(age);
+
+    if (isAdult) {
+      navigate("/otp");
+    } else {
+      alert("You are not old enough to use this site.");
+    }
+
+    setDob("");
   };
 
   return (
@@ -27,14 +44,16 @@ const Screen1 = () => {
       </p>
 
       <div className="flex flex-col items-center gap-4 sm:w-96 w-full">
-        <input
+        <Input
           placeholder={"Enter your age here"}
           type={"date"}
           value={dob}
           onChange={handleDobChange}
         />
 
-        <button>Continue</button>
+        <Button disabled={!dob} onClick={onClick}>
+          Continue
+        </Button>
       </div>
     </div>
   );
