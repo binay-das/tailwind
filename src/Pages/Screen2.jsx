@@ -21,12 +21,12 @@ export default function Screen2() {
   };
 
   return (
-    <div className="bg-blue min-h-screen flex flex-col items-center ">
-      <h1 className="mt-32 text-6xl">
+    <div className="bg-mainbg min-h-screen flex flex-col items-center text-center">
+      <h1 className="text-webinar mt-32 text-6xl font-semibold">
         Webinar
-        <span>.gg</span>
+        <span className="text-maintext">.gg</span>
       </h1>
-      <h1 className="m-20 text-4xl font-medium">Let's get started</h1>
+      <h1 className="text-maintext m-20 text-4xl font-medium">Let's get started</h1>
 
       <div className="flex flex-col items-center gap-4 sm:w-96 w-full">
         <Input placeholder={"Email Id"} type={"email"} onChange={onChange} />
