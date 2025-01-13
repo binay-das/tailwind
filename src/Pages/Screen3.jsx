@@ -29,7 +29,12 @@ export const Screen3 = () => {
       inputRefs.current[index - 1].focus();
     }
   };
-  
+
+  const handleVerify = () => {
+    const otp = otpValues.join("");
+    alert(`OTP is ${otp}`);
+  }
+
   return (
     <div className="bg-mainbg min-h-screen flex justify-center items-center text-center">
       <div className="max-w-[350px] flex flex-col gap-8">
@@ -47,7 +52,7 @@ export const Screen3 = () => {
 
 
         </div>
-        <Button  disabled={disabled}>Verify</Button>
+        <Button disabled={disabled} onClick={handleVerify}>Verify</Button>
       </div>
     </div>
   );
