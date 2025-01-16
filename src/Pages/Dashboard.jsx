@@ -1,3 +1,4 @@
+import Content from "../components/dashboard/Content";
 import Sidebar from "../components/dashboard/Sidebar";
 
 const Dashboard = () => {
@@ -13,6 +14,7 @@ const Dashboard = () => {
         Toggle Theme
       </h1>
       <Sidebar />
+      <Content />
     </div>
   );
 };
