@@ -1,10 +1,37 @@
 import { useState } from "react";
 import OptionsComponent from "./OptionsComponent";
 import ProfilePic from "./ProfilePic";
+import { useEffect } from "react";
 
 const Content = () => {
   const [greeting, setGreeting] = useState("");
   const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const updateDateAndGreeting = () => {
+      const date = new Date();
+
+      // Format the date
+      const formattedDate = new Intl.DateTimeFormat("en-US", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+      }).format(date);
+
+      setCurrentDate(formattedDate);
+
+      const hour = date.getHours();
+      if (hour < 12) {
+        setGreeting("Good Morning");
+      } else if (hour < 18) {
+        setGreeting("Good Afternoon");
+      } else {
+        setGreeting("Good Evening");
+      }
+    };
+
+    updateDateAndGreeting();
+  }, []);
 
   return (
     <div className="w-full flex flex-col min-h-screen">
