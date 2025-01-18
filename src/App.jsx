@@ -7,6 +7,7 @@ import Screen2 from './Pages/Screen2'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Screen3 } from './Pages/Screen3'
 import Dashboard from './Pages/Dashboard'
+import NoMatch from './Pages/NoPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
       <Route path="/email" element={<Screen2 />} />
       <Route path="/otp" element={<Screen3 />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="*" element={<NoMatch />} />
       </Routes>
     </BrowserRouter>
   )
