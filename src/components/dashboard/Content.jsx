@@ -2,6 +2,7 @@ import { useState } from "react";
 import OptionsComponent from "./OptionsComponent";
 import ProfilePic from "./ProfilePic";
 import { useEffect } from "react";
+import ScheduledTasks from "./ScheduledTasks";
 
 const Content = () => {
   const [greeting, setGreeting] = useState("");
@@ -118,12 +119,14 @@ const Content = () => {
                   </svg>
                 </div>
               </div>
+              <ScheduledTasks />
             </div>
+            <OptionsComponent />
           </div>
         </div>
       </div>
 
-      <OptionsComponent />
+      
     </div>
   );
 };
