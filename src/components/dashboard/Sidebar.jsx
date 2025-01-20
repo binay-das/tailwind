@@ -4,13 +4,7 @@ import ProfilePic from "./ProfilePic";
 const Sidebar = () => {
   return (
     <div className="md:w-96 w-20 min-h-screen bg-white text-black dark:bg-gray-700 dark:text-white transition-all ease-in-out duration-150 shadow-2xl">
-      <div className="hidden md:flex justify-between items-center w-full p-2 mt-2 mb-8">
-        <button className="bg-gray-500 text-white px-4 py-1 rounded">
-          Webinar
-        </button>
-        <ProfilePic url={'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} className='rounded-full w-10 h-10 object-cover' />
-      </div>
-      <div className="text-center md:hidden flex justify-center items-center cursor-pointer p-2 mt-2 mb-8 hover:bg-gray-200 dark:hover:bg-gray-800 hover:-translate-y-1 transition-all ease-in-out duration-150 rounded-xl">
+      <div className="text-center flex justify-between items-center cursor-pointer px-8 py-2 my-4  hover:bg-gray-200 dark:hover:bg-gray-800 hover:-translate-y-1 transition-all ease-in-out duration-150 rounded-xl">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -23,6 +17,8 @@ const Sidebar = () => {
             clip-rule="evenodd"
           />
         </svg>
+
+        <ProfilePic url={'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} className='rounded-full w-10 h-10 object-cover hidden md:flex' />
       </div>
       <div className="flex flex-col gap-4 p-4">
         <ListItem
