@@ -10,9 +10,38 @@ import {
   WebinarIcon,
 } from "../icons/Icons";
 
+const useMediaQuery= (query) => {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(()=> {
+    const media = window.matchMedia(query);
+
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+
+    return () => media.removeEventListener("change", listener);
+  }, [matches, query]);
+
+  return matches;
+}
+
 const Sidebar = () => {
   let [sidebarOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  useEffect(() => {
+    if (isDesktop == false) {
+      setSidebarOpen(false);
+    } else {
+      setSidebarOpen(true);
+    }
+  }, [isDesktop]);
 
   if (sidebarOpen) {
     return (
