@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import { Button } from "../components/Button";
 import { SubOtpBox } from "../components/SubOtpBox";
+import { useNavigate } from "react-router-dom";
 
 export const Screen3 = () => {
   const [otpValues, setOtpValues] = useState(Array(6).fill(""));
   const [disabled, setDisabled] = useState(true);
   const inputRefs = useRef([]);
+  const navigate = useNavigate();
 
   const handleChange = (index) => (e) => {
     const value = e.target.value;
@@ -33,6 +35,8 @@ export const Screen3 = () => {
   const handleVerify = () => {
     const otp = otpValues.join("");
     alert(`OTP is ${otp}`);
+
+    navigate('/dashboard');
   }
 
   return (

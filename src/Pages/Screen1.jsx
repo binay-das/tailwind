@@ -8,13 +8,7 @@ const Screen1 = () => {
   const [dob, setDob] = useState("");
   const navigate = useNavigate();
 
-  const handleDobChange = (e) => {
-    setDob(e.target.value);
-
-    if (dob >= 18) {
-      navigate("/email");
-    }
-  };
+  const handleDobChange = (e) => setDob(e.target.value);
 
   const onClick = () => {
     const age = calculateAge(dob);
@@ -22,7 +16,7 @@ const Screen1 = () => {
     const isAdult = checkAdult(age);
 
     if (isAdult) {
-      navigate("/otp");
+      navigate("/email");
     } else {
       alert("You are not old enough to use this site.");
     }
